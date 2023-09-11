@@ -5,8 +5,23 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background-color: #d5e1ef;
+    --text-color: #000;
+    --container-color: #fff;
+    --toggler: #333;
+}
+
+.dark_theme {
+    --background-color: #333;
+    --text-color: #fff;
+    --container-color: #222;
+    --toggler: #fff;
+}
+
 body {
-    background-color: #d5e1ef;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: "Outfit", "Arial", sans-serif;
     margin: 20px;
     padding: 20px;
@@ -17,8 +32,36 @@ body {
     height: 100vh;
 }
 
+.toggler {
+    background-color: var(--toggler);
+    color: var(--container-color);
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 2px 10px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    margin: 20px;
+    transition: .5s ease;
+    outline: none;
+    border: 2px solid var(--toggler);
+    user-select: none;
+}
+
+.toggler:hover {
+    border: 2px solid var(--toggler);
+    background-color: var(--container-color);
+    color: var(--toggler);
+    padding: 2px 10px;
+}
+
 .container {
-    background: #fff;
+    background: var(--container-color);
     justify-content: center;
     align-items: center;
     display: flex;
